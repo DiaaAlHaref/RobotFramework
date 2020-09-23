@@ -3,23 +3,23 @@ Library  Selenium2Library
 Resource    PreConditions.robot
 Resource    ../UiActions/UiActions.robot
 Variables    ../PageObjects/ElementLocators.py
-Library     DataDriver  ../TestData/RegistrationTestData_Valid.xlsx  sheet_name=Sheet1
+Library     DataDriver  ../TestData/RegistrationTestData_InValid.xlsx  sheet_name=Sheet1
 
-Test Setup      Navigate To LandingPage
-Test Teardown   close browser
+Test Setup        Navigate To LandingPage
+Test Teardown     close all browsers
 
 Test Template  Test Registration Page
 *** Variables ***
 ${pass_message}   Login
 
 *** Test Cases ***
-Test Valid Registration Data    ${firstName}    ${lastName}  ${email}  ${phone}  ${companyName}  ${streetAddress}  ${city}
+Test Valid Registration Data    ${firstName}    ${lastName}  ${email}   ${phone}  ${companyName}  ${streetAddress}  ${city}
 
 
 
 *** Keywords ***
 Test Registration Page
-    [Arguments]     ${firstName}    ${lastName}  ${email}  ${phone}  ${companyName}  ${streetAddress}  ${city}
+    [Arguments]     ${firstName}    ${lastName}  ${email}   ${phone}  ${companyName}  ${streetAddress}  ${city}
     WaitUntil Element Visible then Send Text      ${firstName_Locator}      ${firstName}
     clear textbox then send text      ${lastname_Locator}     ${lastName}
     clear textbox then send text      ${email_Locator}        ${email}
