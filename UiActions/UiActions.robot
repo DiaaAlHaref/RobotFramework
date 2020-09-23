@@ -15,6 +15,7 @@ WaitUntil Element Visible then Send Text
     [Documentation]     Keyword to Find an element if visible by id, name, xpath and send text
     [Arguments]     ${Locator}      ${Text}
     ${"TextBox"}    set variable    ${Locator}
+    set selenium timeout  10 seconds
     wait until element is visible   ${"TextBox"}
     clear element text  ${"TextBox"}
     input text  ${"TextBox"}    ${Text}
@@ -29,6 +30,7 @@ WaitUntil Element Enabled then Send Text
 
 Clear Textbox then Send Text
     [Arguments]     ${locator}  ${Text}
+    set selenium timeout  10 seconds
     clear element text  ${locator}
     input text  ${locator}      ${Text}
 
