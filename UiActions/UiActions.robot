@@ -47,3 +47,4 @@ Scroll Page to specific location
     [Documentation]  Keyword to scroll to a specific location using x, y location pixels
     [Arguments]  ${x_location}   ${y_location}
     execute javascript  window.scrollTo(${x_location},${y_location})
+
