@@ -33,7 +33,7 @@ Test Registration Page
 
     click button  ${registerButton_Locator}
 
-    page should contain  ${pass_message}
+    page should contain  ${pass_message}    #Assert on page to contain a valid word
 
 
 
